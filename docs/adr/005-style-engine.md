@@ -41,7 +41,8 @@ replacement) apply directly; the rest go to the brief.
 
 ## Open questions
 
-- Whether to adopt an existing prose linter (Vale) with a custom IBM style
-  package instead of a home-grown engine. Recommendation: evaluate Vale during
-  M1 design; adopt it if rule coverage maps cleanly, because it is free and
-  battle-tested.
+- Resolved 2026-07-04: build the engine in Python rather than adopt Vale.
+  The engine must emit drafting briefs for the `Drafter` interface and run
+  as a library inside the MCP server. Vale would add a Go binary to CI and
+  a second rule toolchain for little coverage gain at this size. Revisit if
+  the rule count grows past what a small module maintains well.
