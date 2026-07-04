@@ -19,3 +19,5 @@ jobs:
         run: ruff check .
       - name: Test
         run: pytest --cov=butter_bot
+      - name: Dogfood the style linter on our own docs
+        run: python -m butter_bot.style README.md docs
